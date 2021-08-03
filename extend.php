@@ -29,4 +29,8 @@ return [
     new Extend\Locales(__DIR__.'/locale'),
     (new Extend\Settings)
         ->serializeToForum('tweet_number', 'justoverclock-last-tweet.tweet_number'),
+    (new Extend\Settings)
+        ->serializeToForum('theme', 'justoverclock-last-tweet.theme'),
+    (new Extend\Settings)
+        ->serializeToForum('twhref', 'justoverclock-last-tweet.twhref'),
 ];

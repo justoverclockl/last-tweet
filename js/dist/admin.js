@@ -161,6 +161,18 @@ app.initializers.add('justoverclock/last-tweet', function () {
     label: app.translator.trans('justoverclock-last-tweet.admin.tweet_number'),
     help: app.translator.trans('justoverclock-last-tweet.admin.tweet_number-help'),
     type: 'number'
+  }).registerSetting({
+    setting: 'justoverclock-last-tweet.theme',
+    name: 'theme',
+    label: app.translator.trans('justoverclock-last-tweet.admin.theme'),
+    help: app.translator.trans('justoverclock-last-tweet.admin.theme-help'),
+    type: 'text'
+  }).registerSetting({
+    setting: 'justoverclock-last-tweet.twhref',
+    name: 'twhref',
+    label: app.translator.trans('justoverclock-last-tweet.admin.profile'),
+    help: app.translator.trans('justoverclock-last-tweet.admin.profile-help'),
+    type: 'URL'
   });
 });
 
@@ -201,6 +213,14 @@ var LastTweetWidget = /*#__PURE__*/function (_Widget) {
 
   var _proto = LastTweetWidget.prototype;
 
+  _proto.oncreate = function oncreate(vnode) {
+    _Widget.prototype.oncreate.call(this, vnode);
+
+    $('.twitter-timeline').attr('data-tweet-limit', app.forum.attribute('tweet_number') || '2');
+    $('.twitter-timeline').attr('data-theme', app.forum.attribute('theme') || 'light');
+    $('.twitter-timeline').attr('href', app.forum.attribute('twhref') || 'https://twitter.com/flarum');
+  };
+
   _proto.className = function className() {
     return 'LastTweetWidget';
   };
@@ -217,18 +237,14 @@ var LastTweetWidget = /*#__PURE__*/function (_Widget) {
 
   _proto.content = function content() {
     var isLoading = app.translator.trans('justoverclock-last-tweet.forum.loading');
-    var itemToFetch = app.forum.attribute('tweet_number');
     return m("div", {
       className: "LastTweetWidget-content"
     }, m("div", {
       "class": "tweet-item"
     }, m("a", {
       "class": "twitter-timeline",
-      href: "https://twitter.com/flarumitalia",
-      "data-theme": "light",
       "data-link-color": "#2393aa",
       "data-chrome": "noheader nofooter noborders noscrollbar transparent",
-      "data-tweet-limit": "${itemToFetch}",
       "aria-polite": "polite"
     }, "$", isLoading)));
   };
