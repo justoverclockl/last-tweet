@@ -276,12 +276,8 @@ __webpack_require__.r(__webpack_exports__);
   new flarum_extensions_afrux_forum_widgets_core_common_extend_Widgets__WEBPACK_IMPORTED_MODULE_0___default.a().add({
     key: 'LastTweet',
     component: _components_LastTweetWidget__WEBPACK_IMPORTED_MODULE_1__["default"],
-    // Can be a callback that returns a boolean value.
-    // example: () => app.forum.attribute('myCustomExtension.mySetting')
     isDisabled: false,
-    // Is this a one time use widget ? leave true if you don't know.
     isUnique: true,
-    // The following values are default values that can be changed by the admin.
     placement: 'end',
     position: 1
   }).extend(app, 'justoverclock-last-tweet');
