@@ -1,10 +1,7 @@
 export default function () {
     $(document).ready(function () {
         var target = document.querySelector('.twitter-item');
-
         var config = { attributes: true, childList: true, characterData: true };
-
-        /*observer.observe(target, config);*/
 
         function LoadTweet(item) {
             if ($('.twitter-item').hasClass('Loaded')) {
@@ -26,7 +23,7 @@ export default function () {
                 if (tweet) {
                     $('.twitter-item').html('').html(tweet);
                 }
-                $('.twitter-item').addClass('Loaded'); // prevent loop
+                $('.twitter-item').addClass('Loaded');
             }
         }
     });

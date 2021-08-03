@@ -237,7 +237,6 @@ __webpack_require__.r(__webpack_exports__);
       childList: true,
       characterData: true
     };
-    /*observer.observe(target, config);*/
 
     function LoadTweet(item) {
       if ($('.twitter-item').hasClass('Loaded')) {// do nothing
@@ -251,7 +250,7 @@ __webpack_require__.r(__webpack_exports__);
           $('.twitter-item').html('').html(tweet);
         }
 
-        $('.twitter-item').addClass('Loaded'); // prevent loop
+        $('.twitter-item').addClass('Loaded');
       }
     }
   });
