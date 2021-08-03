@@ -2,7 +2,6 @@ import registerWidget from '../common/registerWidget';
 
 app.initializers.add('justoverclock/last-tweet', () => {
     registerWidget(app);
-
     app.extensionData
       .for('justoverclock-last-tweet')
       .registerSetting({
@@ -25,5 +24,5 @@ app.initializers.add('justoverclock/last-tweet', () => {
         label: app.translator.trans('justoverclock-last-tweet.admin.profile'),
         help: app.translator.trans('justoverclock-last-tweet.admin.profile-help'),
         type: 'URL',
-      })
+      });
 });

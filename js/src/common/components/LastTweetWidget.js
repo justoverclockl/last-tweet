@@ -32,7 +32,7 @@ export default class LastTweetWidget extends Widget {
     }
 
     content() {
-        const isLoading = app.translator.trans('justoverclock-last-tweet.forum.loading');
+      const isLoading = app.translator.trans('justoverclock-last-tweet.forum.loading');
       return (
             <div className="LastTweetWidget-content">
                 <div class="tweet-item">
