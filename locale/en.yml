@@ -1,0 +1,7 @@
+justoverclock-last-tweet:
+  admin:
+    tweet_number: Tweet Number
+    tweet_number-help: Put here the number of tweets to be fetched
+  forum:
+    widget-title: Last Tweet
+    loading: Loading tweets...
