@@ -1,8 +1,5 @@
 export default function () {
     $(document).ready(function () {
-        var target = document.querySelector('.twitter-item');
-        var config = { attributes: true, childList: true, characterData: true };
-
 
         function LoadTweet(item) {
             if ($('.twitter-item').hasClass('Loaded')) {
