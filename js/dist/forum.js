@@ -295,9 +295,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_components_TweetFetch__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../common/components/TweetFetch */ "./src/common/components/TweetFetch.js");
 /* harmony import */ var flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! flarum/forum/components/IndexPage */ "flarum/forum/components/IndexPage");
 /* harmony import */ var flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! flarum/common/components/Page */ "flarum/common/components/Page");
-/* harmony import */ var flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_5__);
-
 
 
 
@@ -306,18 +303,7 @@ __webpack_require__.r(__webpack_exports__);
 flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('justoverclock/last-tweet', function () {
   Object(_common_registerWidget__WEBPACK_IMPORTED_MODULE_2__["default"])(flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default.a);
 });
-Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__["extend"])(flarum_common_components_Page__WEBPACK_IMPORTED_MODULE_5___default.a.prototype, ['oncreate', 'onupdate'], _common_components_TweetFetch__WEBPACK_IMPORTED_MODULE_3__["default"]);
-
-/***/ }),
-
-/***/ "flarum/common/components/Page":
-/*!***************************************************************!*\
-  !*** external "flarum.core.compat['common/components/Page']" ***!
-  \***************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = flarum.core.compat['common/components/Page'];
+Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__["extend"])(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_4___default.a.prototype, ['oncreate', 'onupdate'], _common_components_TweetFetch__WEBPACK_IMPORTED_MODULE_3__["default"]);
 
 /***/ }),
 
