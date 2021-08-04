@@ -19,7 +19,6 @@ composer require justoverclock/last-tweet:"*"
 
 ```sh
 composer update justoverclock/last-tweet:"*"
-php flarum migrate
 php flarum cache:clear
 ```
 
