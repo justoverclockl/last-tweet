@@ -163,7 +163,7 @@ app.initializers.add('justoverclock/last-tweet', function () {
     type: 'number'
   }).registerSetting({
     setting: 'justoverclock-last-tweet.theme',
-    name: 'theme',
+    name: 'justoverclock-last-tweet.theme',
     label: app.translator.trans('justoverclock-last-tweet.admin.theme'),
     help: app.translator.trans('justoverclock-last-tweet.admin.theme-help'),
     type: 'text'
@@ -191,6 +191,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
 /* harmony import */ var flarum_extensions_afrux_forum_widgets_core_common_components_Widget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/extensions/afrux-forum-widgets-core/common/components/Widget */ "flarum/extensions/afrux-forum-widgets-core/common/components/Widget");
 /* harmony import */ var flarum_extensions_afrux_forum_widgets_core_common_components_Widget__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_extensions_afrux_forum_widgets_core_common_components_Widget__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _TweetFetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TweetFetch */ "./src/common/components/TweetFetch.js");
 
 
 /*
@@ -202,6 +203,7 @@ __webpack_require__.r(__webpack_exports__);
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
+
 
 
 var LastTweetWidget = /*#__PURE__*/function (_Widget) {
@@ -216,9 +218,7 @@ var LastTweetWidget = /*#__PURE__*/function (_Widget) {
   _proto.oncreate = function oncreate(vnode) {
     _Widget.prototype.oncreate.call(this, vnode);
 
-    $('.twitter-timeline').attr('data-tweet-limit', app.forum.attribute('tweet_number') || '2');
-    $('.twitter-timeline').attr('data-theme', app.forum.attribute('theme') || 'light');
-    $('.twitter-timeline').attr('href', app.forum.attribute('twhref') || 'https://twitter.com/flarum');
+    Object(_TweetFetch__WEBPACK_IMPORTED_MODULE_2__["default"])(vnode);
   };
 
   _proto.className = function className() {
@@ -243,6 +243,9 @@ var LastTweetWidget = /*#__PURE__*/function (_Widget) {
       "class": "tweet-item"
     }, m("a", {
       "class": "twitter-timeline",
+      "data-tweet-limit": app.forum.attribute('tweet_number') || '2',
+      "data-theme": app.forum.attribute('justoverclock-last-tweet.theme') || 'light',
+      href: app.forum.attribute('twhref') || 'https://twitter.com/flarum',
       "data-link-color": "#2393aa",
       "data-chrome": "noheader nofooter noborders noscrollbar transparent",
       "aria-polite": "polite"
@@ -253,6 +256,37 @@ var LastTweetWidget = /*#__PURE__*/function (_Widget) {
 }(flarum_extensions_afrux_forum_widgets_core_common_components_Widget__WEBPACK_IMPORTED_MODULE_1___default.a);
 
 
+
+/***/ }),
+
+/***/ "./src/common/components/TweetFetch.js":
+/*!*********************************************!*\
+  !*** ./src/common/components/TweetFetch.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  $(document).ready(function () {
+    function LoadTweet(item) {
+      if ($('.twitter-item').hasClass('Loaded')) {// do nothing
+      } else {
+        console.log('LoadTweet Fired ' + item);
+        var timelineId = item;
+        var media = $('#' + timelineId).contents().find('.timeline-Tweet-media img').attr('src') || '';
+        var tweet = $('#' + timelineId).contents().find('.timeline-Tweet-text').html() || '';
+
+        if (tweet) {
+          $('.twitter-item').html('').html(tweet);
+        }
+
+        $('.twitter-item').addClass('Loaded');
+      }
+    }
+  });
+});
 
 /***/ }),
 

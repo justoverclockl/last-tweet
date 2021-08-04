@@ -13,7 +13,7 @@ app.initializers.add('justoverclock/last-tweet', () => {
     })
       .registerSetting({
         setting: 'justoverclock-last-tweet.theme',
-        name: 'theme',
+        name: 'justoverclock-last-tweet.theme',
         label: app.translator.trans('justoverclock-last-tweet.admin.theme'),
         help: app.translator.trans('justoverclock-last-tweet.admin.theme-help'),
         type: 'text',

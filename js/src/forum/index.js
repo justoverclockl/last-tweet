@@ -7,4 +7,4 @@ import IndexPage from 'flarum/forum/components/IndexPage';
 app.initializers.add('justoverclock/last-tweet', () => {
     registerWidget(app);
 });
-extend(IndexPage.prototype, ['oncreate', 'onupdate'], TweetFetch);
+extend(IndexPage.prototype, ['oncreate', 'onbeforeupdate'], TweetFetch);

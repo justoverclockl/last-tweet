@@ -155,6 +155,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_esm_inheritsLoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/inheritsLoose */ "./node_modules/@babel/runtime/helpers/esm/inheritsLoose.js");
 /* harmony import */ var flarum_extensions_afrux_forum_widgets_core_common_components_Widget__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! flarum/extensions/afrux-forum-widgets-core/common/components/Widget */ "flarum/extensions/afrux-forum-widgets-core/common/components/Widget");
 /* harmony import */ var flarum_extensions_afrux_forum_widgets_core_common_components_Widget__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(flarum_extensions_afrux_forum_widgets_core_common_components_Widget__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _TweetFetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TweetFetch */ "./src/common/components/TweetFetch.js");
 
 
 /*
@@ -166,6 +167,7 @@ __webpack_require__.r(__webpack_exports__);
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
+
 
 
 var LastTweetWidget = /*#__PURE__*/function (_Widget) {
@@ -180,9 +182,7 @@ var LastTweetWidget = /*#__PURE__*/function (_Widget) {
   _proto.oncreate = function oncreate(vnode) {
     _Widget.prototype.oncreate.call(this, vnode);
 
-    $('.twitter-timeline').attr('data-tweet-limit', app.forum.attribute('tweet_number') || '2');
-    $('.twitter-timeline').attr('data-theme', app.forum.attribute('theme') || 'light');
-    $('.twitter-timeline').attr('href', app.forum.attribute('twhref') || 'https://twitter.com/flarum');
+    Object(_TweetFetch__WEBPACK_IMPORTED_MODULE_2__["default"])(vnode);
   };
 
   _proto.className = function className() {
@@ -207,6 +207,9 @@ var LastTweetWidget = /*#__PURE__*/function (_Widget) {
       "class": "tweet-item"
     }, m("a", {
       "class": "twitter-timeline",
+      "data-tweet-limit": app.forum.attribute('tweet_number') || '2',
+      "data-theme": app.forum.attribute('justoverclock-last-tweet.theme') || 'light',
+      href: app.forum.attribute('twhref') || 'https://twitter.com/flarum',
       "data-link-color": "#2393aa",
       "data-chrome": "noheader nofooter noborders noscrollbar transparent",
       "aria-polite": "polite"
@@ -303,7 +306,7 @@ __webpack_require__.r(__webpack_exports__);
 flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default.a.initializers.add('justoverclock/last-tweet', function () {
   Object(_common_registerWidget__WEBPACK_IMPORTED_MODULE_2__["default"])(flarum_forum_app__WEBPACK_IMPORTED_MODULE_0___default.a);
 });
-Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__["extend"])(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_4___default.a.prototype, ['oncreate', 'onupdate'], _common_components_TweetFetch__WEBPACK_IMPORTED_MODULE_3__["default"]);
+Object(flarum_common_extend__WEBPACK_IMPORTED_MODULE_1__["extend"])(flarum_forum_components_IndexPage__WEBPACK_IMPORTED_MODULE_4___default.a.prototype, ['oncreate', 'onbeforeupdate'], _common_components_TweetFetch__WEBPACK_IMPORTED_MODULE_3__["default"]);
 
 /***/ }),
 
