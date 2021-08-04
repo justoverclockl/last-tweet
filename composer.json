@@ -2,7 +2,9 @@
     "name": "justoverclock/last-tweet",
     "description": "Fetch last X tweet from Twitter",
     "keywords": [
-        "flarum"
+        "afrux",
+        "widget",
+        "twitter widget"
     ],
     "type": "flarum-extension",
     "license": "MIT",
@@ -30,9 +32,9 @@
             "title": "Last Tweet",
             "category": "",
             "icon": {
-                "name": "",
-                "backgroundColor": "",
-                "color": ""
+                "name": "fab fa-twitter",
+                "backgroundColor": "red",
+                "color": "white"
             }
         }
     }
