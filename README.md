@@ -1,6 +1,6 @@
 # Last Tweet
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://img.shields.io/packagist/v/justoverclock/last-tweet.svg)](https://packagist.org/packages/justoverclock/last-tweet) [![Total Downloads](https://img.shields.io/packagist/dt/justoverclock/last-tweet.svg)](https://packagist.org/packages/justoverclock/last-tweet)
+![License](https://img.shields.io/badge/license-MIT-blue.svg) [![Latest Stable Version](https://poser.pugx.org/justoverclock/last-tweet/v)](https://packagist.org/packages/justoverclock/last-tweet) [![Total Downloads](https://poser.pugx.org/justoverclock/last-tweet/downloads)](https://packagist.org/packages/justoverclock/last-tweet) [![Support Me](https://img.shields.io/badge/Donate-Support%20My%20Work-orange)](https://github.com/sponsors/justoverclockl)
 
 A [Flarum](http://flarum.org) extension. Fetch last X tweet from Twitter. This extension use a Widget Core from Afrux 😍
 
