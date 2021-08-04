@@ -26,5 +26,4 @@ php flarum cache:clear
 ## Links
 
 - [Packagist](https://packagist.org/packages/justoverclock/last-tweet)
-- [GitHub](https://github.com/justoverclock/last-tweet)
-- [Discuss](https://discuss.flarum.org/d/PUT_DISCUSS_SLUG_HERE)
+- [GitHub](https://github.com/justoverclockl/last-tweet)
